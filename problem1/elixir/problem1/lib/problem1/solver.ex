@@ -1,20 +1,25 @@
 defmodule Problem1.Solver do
 
-  def solve() do
-    numbers = 100000..999999
-    [ head | tail ] = Enum.to_list(numbers)
-    check_number(head)
-    solve(tail)
+  @moduledoc """
+  Solves the problem of finding a number according to the rules outlined
+  in the Problem1 README
+  """
+
+  def solve( ) do
+    numbers = 100_000..999_999
+    [ head | tail ] = Enum.to_list( numbers )
+    check_number( head )
+    solve( tail )
   end
 
-  def solve(range) do
+  def solve( range ) do
     [ head | tail ] = range
-    check_number(head)
-    solve(tail)
+    check_number( head )
+    solve( tail )
   end
 
-  def check_number(num) do
-    digits = Integer.digits(num)
+  def check_number( num ) do
+    digits = Integer.digits( num )
 
     if first_two_digits_are_product_of_third_and_fourth?( digits ) and
        first_digit_is_double_the_second?( digits ) and
@@ -25,8 +30,8 @@ defmodule Problem1.Solver do
        sum_of_all_digits_is_23?( digits )
     do
 
-      IO.puts("The number is: #{num}")
-      exit(:normal)
+      IO.puts( "The number is: #{num}" )
+      exit( :normal )
     end
   end
 

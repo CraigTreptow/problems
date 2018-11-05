@@ -3,6 +3,6 @@ defmodule Problem1Test do
   doctest Problem1
 
   test "greets the world" do
-    assert Problem1.hello() == :world
+    assert Problem1.solve( ) == :world
   end
 end
